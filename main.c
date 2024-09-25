@@ -214,7 +214,16 @@ int saveParcial()
         return 0;
     }
 
-    fprintf(arq, "%d\n", qtdeEleitores);
+    int votos = 0;
+    for (int i = 0; i < qtdeEleitores; i++)
+    {
+        if (comissao[i].votou)
+        {
+            votos++;
+        }
+    }
+
+    fprintf(arq, "%d\n", votos);
 
     for (int i = 0; i < qtdeEleitores; i++)
     {
